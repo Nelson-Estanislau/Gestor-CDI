@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #3DC2C7;
+}
+
+form#infoForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1 1 22%; /* Ajusta a largura dos campos */
+    margin-right: 10px;
+    margin-bottom: 15px; /* Adiciona espaço entre as linhas de campos */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Ajuste específico para o campo 'Período' */
+#periodo {
+    width: 230px; /* Ajuste a largura conforme necessário */
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; /* Permite rolar horizontalmente em telas pequenas */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 5px; /* Ajustado para garantir melhor leitura */
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td[contenteditable="true"] {
+    background-color: #f9f9f9;
+}
+
+td:first-child {
+    text-align: left; /* Alinha a descrição do consumo à esquerda */
+}
+
+button {
+    margin-top: 20px;
+    background-color: #3DC2C7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+}
+
+/* Estilo para os campos de upload e seleção ficarem ao lado */
+.upload-and-select {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.upload-container, .select-container {
+    margin-right: 20px;
+}
+
+/* Estilo para o campo de seleção do CSV */
+.select-container > select {
+    padding: 8px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    /* Ajusta o layout do formulário */
+    .form-group {
+        flex: 1 1 48%; /* Dois campos por linha em telas pequenas */
+    }
+
+    h1 {
+        font-size: 24px; /* Ajusta o tamanho do título */
+    }
+
+    /* Os botões voltam ao tamanho original */
+    button {
+        margin-top: 15px;
+        width: auto; /* Deixa os botões com tamanho original */
+        padding: 10px 20px; /* Mantém o padding original */
+    }
+
+    table {
+        font-size: 12px; /* Ajusta o tamanho da fonte da tabela */
+    }
+
+    th, td {
+        padding: 5px; /* Menor espaçamento na tabela */
+    }
+}
+
+/* Responsividade para dispositivos muito pequenos, como smartphones */
+@media screen and (max-width: 480px) {
+    .form-group {
+        flex: 1 1 100%; /* Todos os campos do formulário ocupam a largura total */
+        margin-right: 0; /* Remove a margem à direita */
+    }
+
+    /* Os botões voltam ao tamanho original */
+    button {
+        padding: 10px 20px; /* Ajusta o padding para botões menores */
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões */
+        margin-top: 15px;
+        width: auto; /* Garante que os botões não ocupem 100% da largura */
+    }
+
+    table {
+        font-size: 10px; /* Reduz o tamanho da fonte para facilitar a leitura em telas pequenas */
+    }
+
+    th, td {
+        padding: 3px; /* Menor espaçamento nas células da tabela */
+    }
+
+    th:nth-child(n+6), td:nth-child(n+6) {
+        display: none; /* Oculta as colunas desnecessárias para melhorar a legibilidade */
+    }
+}
+
+/* Estilo para impressão */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 5px;
+        text-align: center;
+    }
+
+    button {
+        display: none;
+    }
+
+    th:nth-child(34), td:nth-child(34) {
+        display: none;
+    }
+
+    /* Esconde o campo de quantidade durante a impressão */
+    .quantidade-container {
+        display: none;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>CONSUMO DIÁRIO INTERNAMENTO</h1>
+
+    <!-- Contêiner flexível para os campos de upload e seleção -->
+    <div class="upload-and-select">
+        <!-- Campo de upload de arquivo CSV -->
+        <div class="upload-container">
+            <label for="fileInput">Carregar Planilha CSV: </label>
+            <input type="file" id="fileInput" accept=".csv" onchange="processFile(event)">
+        </div>
+
+        <!-- Campo de seleção de medicamentos a partir do CSV -->
+        <div class="select-container">
+            <label for="dropdown">Escolha um item da lista:</label>
+            <select id="dropdown">
+                <option value="">Selecione um item</option>
+            </select>
+        </div>
+    </div>
+
+    <form id="infoForm">
+        <label for="prontuario">Prontuário:</label>
+        <input type="text" id="prontuario" name="prontuario"><br><br>
+    
+        <label for="paciente">Paciente:</label>
+        <input type="text" id="paciente" name="paciente"><br><br>
+    
+        <label for="convenio">Convênio:</label>
+        <input type="text" id="convenio" name="convenio"><br><br>
+    
+        <!-- Campo de Período unificado -->
+        <label for="periodo">Período:</label>
+        <input type="text" id="periodo" name="periodo" placeholder="Digite o período (ex: 01/01/2024 - 31/01/2024)"><br><br>
+    </form>           
+
+    <table id="consumoTable">
+        <thead>
+            <tr>
+                <th>DESCRIÇÃO DO CONSUMO</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>31</th>
+                <th>TOTAL</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas de consumo serão adicionadas aqui -->
+        </tbody>
+    </table>
+
+    <!-- Campos para preencher a quantidade para todos os dias -->
+    <div class="quantidade-container">
+        <input type="number" id="quantidadeTodosDias" placeholder="Digite a quantidade" />
+        <button type="button" onclick="preencherTodosOsDias()">Adicionar a mesma quantidade para todos os dias</button>
+        <button type="button" onclick="imprimirTabela()">Imprimir</button>
+        <button type="button" onclick="voltarPaginaPrincipal()">Voltar à Página Principal</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

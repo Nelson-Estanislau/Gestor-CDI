@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTOR | CDI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script> <!-- Inclui o JS -->
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo do Gestor de Consumo">
+    </header>
+    <main>
+        <h1>GESTOR CONSUMO DIÁRIO INTERNAMENTO</h1>
+        <p>Gerencie o consumo de medicamentos e materiais hospitalares de forma eficiente.</p>
+        <h5>EXCLUSIVO PARA ENFERMEIROS ANALISTAS E ENFERMEIROS AUDITORES</h5>
+
+        <!-- Botão Vamos Começar que pisca -->
+        <button id="start-button" class="blink-button">Vamos Começar</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 GESTOR CONSUMO DIÁRIO INTERNAMENTO. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            window.location.href = 'registro_consumo.html'; // Nome do arquivo HTML da página de registro de consumo
+        });
+    </script>
+</body>
+</html>

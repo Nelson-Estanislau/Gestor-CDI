@@ -1,0 +1,139 @@
+/* Arquivo CSS básico para o layout do site */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Garante que o padding e border não afetem o tamanho final do elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #D3CED0; /* Cor de fundo suave */
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 100%; /* Logo ajustada para ser 100% da largura disponível */
+    max-width: 600px; /* Limita o tamanho máximo da logo */
+    height: auto; /* Garante que a altura da logo seja ajustada proporcionalmente */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* Estilo principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #3DC2C7; /* Cor verde-azulada */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    word-wrap: break-word; /* Evita que palavras longas saiam da tela */
+}
+
+/* Subtítulo */
+h5 {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    word-wrap: break-word; /* Evita que palavras longas saiam da tela */
+}
+
+/* Estilo do botão Vamos Começar */
+.blink-button {
+    background-color: #3DC2C7; /* Verde-azulada */
+    color: white;
+    font-size: 1.5em;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: blink 5.0s infinite alternate; /* Efeito de piscar */
+    margin-bottom: 30px;
+    transition: background-color 5.0s ease;
+    display: inline-block; /* Garante que o botão não ocupe toda a linha */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+}
+
+.blink-button:hover {
+    background-color: #666; /* Cor de hover mais escura */
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #3DC2C7; /* Cor de fundo do rodapé */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1em;
+}
+
+/* ---------------------------- MEDIA QUERIES ---------------------------- */
+
+/* Ajustes para telas pequenas (Celulares) */
+@media screen and (max-width: 768px) {
+    /* Ajuste da logo */
+    header img {
+        width: 80%; /* A logo ocupa 80% da largura da tela */
+        max-width: 400px; /* Limita o tamanho máximo da logo */
+    }
+
+    /* Tamanho do título principal */
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Tamanho do subtítulo */
+    h5 {
+        font-size: 1em;
+    }
+
+    /* Ajuste do botão "Vamos Começar" */
+    .blink-button {
+        font-size: 1.2em;
+        padding: 12px 20px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (celulares em modo retrato) */
+@media screen and (max-width: 480px) {
+    /* Ajustes adicionais para celulares muito pequenos */
+    h1 {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+    }
+
+    .blink-button {
+        font-size: 1.1em;
+        padding: 10px 18px;
+    }
+
+    footer {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte do rodapé */
+    }
+}
